@@ -1,0 +1,663 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"); 
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap"); *, ::after, ::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    filter: brightness(70%);
+    height: auto;
+}
+
+.main-img {
+    position: sticky;
+    filter: brightness(0.5);
+}
+
+input, button, textarea {
+    font: inherit;
+}
+
+:root {
+    --FF: "Nunito", sans-serif;
+    --FF-HEADINGS: "Fugaz One" , cursive;
+    --FS: clamp(1rem, 2.2vh, 1.5rem);
+    --BGCOLOR: #ffa500;
+    --BGCOLOR-FADE: rgb(252, 220, 160);
+    --BGIMAGE: linear-gradient(to bottom, var(--BGCOLOR), var(--BGCOLOR-FADE));
+    --BODY-BGCOLOR: #FFF;
+    --FONT-COLOR: #000;
+    --BORDER-COLOR: #333;
+    --HIGHLIGHT-COLOR: rgb(51, 178, 51);
+    --LINK-COLOR: #000;
+    --LINK-HOVER: hsla(0, 0%, 0%, 0.6);
+    --LINK-ACTIVE: orange;
+    --HEADER-BGCOLOR: #000;
+    --HEADER-COLOR: white;
+    --NAV-BGCOLOR: white;
+    --HERO-BGCOLOR: rgba(51, 178, 51, 0.75);
+    --HERO-COLOR: #fff;
+    --BUTTON-COLOR: #fff;
+    --BORDERS: 1px solid var(--BORDER-COLOR);
+    --BORDER-RADIUS: 15px;
+    --PADDING-TB: 0.25em;
+    --PADDING-SIDE: 2.5%;
+    --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
+    --BGCOLOR-FADE: gray;
+    --BGCOLOR: #000;
+    --BODY-BGCOLOR: #333;
+    --BORDER-COLOR: whitesmoke;
+    --BUTTON-COLOR: #000;
+    --FONT-COLOR: whitesmoke;
+    --HEADER-COLOR: whitesmoke;
+    --HERO-COLOR: #333;
+    --HIGHLIGHT-COLOR: whitesmoke;
+    --LINK-ACTIVE: rgb(252, 200, 103);
+    --LINK-COLOR: whitesmoke;
+    --LINK-HOVER: orange;
+    --NAV-BGCOLOR: rgb(20, 20, 20);
+}
+
+
+
+.offscreen {
+    position: relative;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.center {
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--FS);
+    font-family: var(--FF);
+    background: rgb(168,157,29);
+background: linear-gradient(90deg, rgba(168,157,29,1) 28%, rgba(24,116,135,1) 96%);
+}
+
+body {
+    color: var(--FONT-COLOR);
+    margin: 0px auto;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: var(--FF-HEADINGS);
+    letter-spacing: 0.1em;
+}
+
+h2, h3 {
+    margin-bottom: 1em;
+    color: var(--HIGHLIGHT-COLOR);
+}
+
+p {
+    line-height: 1.5;
+}
+
+a:any-link {
+    color: var(--LINK-COLOR);
+    text-decoration: none;
+}
+
+a:hover, a:focus-visible {
+    color: var(--LINK-HOVER);
+}
+
+a:active {
+    color: var(--LINK-ACTIVE);
+}
+
+.header {
+    position: sticky;
+    
+    display: flex;
+    flex-direction: column;
+    background: rgb(36 166 113);
+    z-index: 1;
+    top: 0px;
+    align-items: center;
+}
+
+.header__h1 {
+    text-align: center;
+    color: var(--HEADER-COLOR);
+    padding: var(--PADDING-TB) var(--PADDING-SIDE);
+    flex: 1 1 0%;
+}
+
+.header__nav {
+    font-weight: bold;
+    padding: 1em;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    z-index: 999;
+}
+
+.header__ul {
+    padding: var(--PADDING-TB) var(--PADDING-SIDE);
+    list-style-type: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.hero {
+    position: relative;
+    top: -7em;
+    min-height: 100vh;
+    background: url(../img/main-taco.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #333131;
+    background-blend-mode: soft-light;
+
+}
+
+.footer {
+    position: relative;
+    bottom: 0px;
+    color: var(--HEADER-COLOR);
+    padding: var(--PADDING-TB) var(--PADDING-SIDE);
+    text-align: center;
+}
+
+.main {
+    padding: var(--PADDING-TB) var(--PADDING-SIDE);
+}
+
+.menu__container {
+    display: flex;
+    justify-content: center;
+}
+
+.menu__item {
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+.menu__img {
+  height: auto;
+  width: 100%;
+}
+.menu__item h3 {
+    position: relative;
+}
+
+.menu__item p {
+    margin-bottom: 0px;
+    display: inline;
+}
+
+.mainss__hours {
+    background-color: #1d7d56;
+}
+.main__article {
+    scroll-margin-top: 6.5rem;
+    margin: var(--MARGIN);
+}
+
+.main__article:first-child {
+    margin-top: 1em;
+}
+
+.main__article:last-child {
+    min-height: calc(-20rem + 100vh);
+}
+
+.about__tirvia {
+    margin: var(--MARGIN);
+}
+
+.about__trivia-answer {
+    margin-top: 1em;
+}
+
+.contact__h2 {
+    margin: 0px;
+}
+
+.contact__fieldset {
+    border: none;
+}
+
+.contact__p {
+    margin: 1em 0px;
+}
+
+.contact__label {
+    display: block;
+    font-weight: bold;
+}
+
+.about_s {
+    font-size: 30px;
+    text-align: center;
+}
+
+.detail_s {
+    font-size: 20px;
+}
+
+.contact__input, .contact__textarea {
+    padding: 0.5em;
+    border-radius: var(--BORDER-RADIUS);
+    border-width: 2px;
+    width: 100%;
+}
+
+.contact__button {
+    padding: 0.5em;
+    border-radius: var(--BORDER-RADIUS);
+    background-color: var(--HIGHLIGHT-COLOR);
+    color: var(--BUTTON-COLOR);
+    font-weight: bold;
+}
+
+thead, tbody, tfoot, tr {
+    display: contents;
+}
+
+.menu__cr {
+    grid-area: cr;
+}
+
+.menu__sf {
+    grid-area: sf;
+}
+
+.menu__cs {
+    grid-area: cs;
+}
+
+.menu__cr, .menu__sf, .menu__cs, .menu__header {
+    color: var(--HIGHLIGHT-COLOR);
+    font-weight: bold;
+    place-content: center;
+    height: 100%;
+}
+
+.menu__header {
+    width: 100%;
+    padding: 1em;
+}
+
+h2.menu__h2 {
+    text-align: center;
+}
+.menu__item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.menu__item img {
+    border-radius: 0px 5px 0px 0px;
+    position: relative;
+    filter: brightness(50%);
+}
+
+.menu__price {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.menu__price div {
+    text-align: center;
+}
+
+.menu__price .price {
+    font-weight: bold;
+    color: rgb(68, 44, 44);
+}
+
+.menu__price .qty {
+    font-weight: bold;
+    color: rgb(209 213 217);
+}
+
+.price-tag, .qty-tag {
+    font-weight: bold;
+    margin-left: 3em;
+    color: rgb(221, 228, 235);
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-right: 3em;
+}
+
+
+@media screen and (min-width: 576px) {
+    .header__h1::after {
+        content: " 🌮 ";
+    }
+
+    .menu__header, .menu__cr, .menu__sf, .menu__cs {
+        font-size: 125%;
+    }
+
+
+    
+}
+
+
+@media (max-width: 776px) {
+    .menu-item {
+        width: 100%;
+    }
+    .menu-container {
+        flex-wrap: wrap;
+    }
+} 
+
+.order-btn {
+    background-color: rgb(76, 175, 80);
+    border: none;
+    color: white;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1em 3em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.order-btn:hover {
+    background-color: rgb(69, 160, 73);
+}
+
+.trivia {
+    background: rgb(43,168,29);
+background: linear-gradient(90deg, rgba(43,168,29,1) 28%, rgba(24,116,135,1) 96%);
+    padding: 20px;
+}
+
+.trivia__h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.trivia__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.trivia__item {
+    background-color: rgb(63 151 161);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
+    padding: 3em;
+    margin: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+.trivia__h3 {
+    margin-top: 0px;
+    
+    position: relative;
+}
+
+.trivia__p {
+    
+    margin-bottom: 0px;
+    display: inline;
+}
+@media (max-width: 755px) {
+    .trivia__item  {
+        width: 100%;
+    }
+
+
+}
+
+
+
+hr {
+    height: 41em;
+}
+.mainc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .mainc__article {
+
+    margin: 10px;
+    padding: 23px;
+    flex: 1;
+    border-radius: 5px;
+  }
+
+  .mainc__article.contact {
+    width: calc(100% - 30px);
+    position: relative;
+  }
+  .mainc__article.location {
+    position: sticky;
+    top: 2em;
+  }
+  
+  .mainc__article h2 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .address {
+    text-align: center;
+  }
+  
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact__label {
+    margin-top: 10px;
+  }
+
+  .btn-container {
+    display: flex;
+    gap: 2em;
+  }
+  
+  .contact__input, .contact__textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #f7f7f7d1;
+    transition: 0.5s ease-in-out;
+    outline: none;
+}
+
+.contact__textarea  {
+    resize: none;
+    height: 100px;
+    width: 250px;
+}
+.contact__input:focus, .contact__textarea:focus {
+    background: #fff;
+
+}
+  
+  .contact__button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer__p {
+    margin: 0;
+  }
+  .footer__contact {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .footer__contact p {
+    margin: 0;
+  }
+  
+  .footer__social {
+    text-align: center;
+  }
+  
+  .footer__social a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .footer__social a:hover {
+    color: #ccc;
+  }
+
+
+  
+  .hero__container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .hero__h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 45px;
+  }
+  
+  .hero__p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .main-img {
+    display: none;
+  }
+
+  .hero__btn {
+    background-color: #c78f00;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-out;
+    position: relative;
+    width: 195px;
+  }
+  
+  .hero__btn:hover {
+    background-color: #99a101;
+  }
+
+  .mainss {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/tacos_close_up_1000x649.png);
+    background-color: #4b4747;
+    background-blend-mode: soft-light;
+  }
+  
+  .mainss__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+  }
+  
+  .mainss__img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .mainss__hours {
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  .mainss__ul {
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2.5rem;
+  }
+
+  .clock-img {
+    width: 30%;
+  }
+  
+  .mainss__li {
+    text-align: center;
+  }
+
+  ul.mainss__ul li {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1183px) {
+    .menu__container {
+        flex-wrap: wrap;
+    }
+   
+    .menu__item {
+        width: 100%;
+    }
+}
